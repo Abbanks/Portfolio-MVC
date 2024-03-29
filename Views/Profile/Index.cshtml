@@ -1,0 +1,21 @@
+﻿@model ProfileViewModel
+
+ 
+    <div class="container pt-4">
+        <h1 class="text-center mb-4">Work Profile</h1>
+        <div class="row justify-content-center">
+            @foreach (var workHistory in Model.WorkHistories)
+            {
+                <div class="col-md-6">
+                    <div class="frame">
+                        <p>Company: <strong>@workHistory.CompanyName</strong>, @workHistory.CompanyAddress</p>
+                        <p>Position: @workHistory.Position</p>
+                        <p>Job Description: @workHistory.Description</p>
+                        <p>Top Skills: @workHistory.Skills</p>
+                        <p>Work Duration: @workHistory.StartDate - @workHistory.EndDate</p>
+                    </div>
+                </div>
+            }
+        </div>  
+</div>
+

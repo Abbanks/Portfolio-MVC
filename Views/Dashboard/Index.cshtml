@@ -1,0 +1,70 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+ 
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+ 
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <img src="~/image/img.png" alt="image" />
+            </div>
+        </div>
+        <div class="col-md-6 pt-5">
+            <div class="box box-style">
+                <h3 class="text-style">I'm @Model.Name.</h3>
+                <p class="p">A @Model.Title based in @Model.Address.</p>
+                <p class="pt-4">
+                    Contact me:<br />
+                    <strong>Phone Number:</strong> @Model.PhoneNumber<br />
+                    <strong>GitHub:</strong> <a href="@Model.GitHubUrl" style="color: #007bff;">@Model.GitHubUrl</a><br />
+                    <strong>LinkedIn:</strong> <a href="@Model.LinkedInUrl" style="color: #007bff;">@Model.LinkedInUrl</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container-flex">
+    <a asp-action="addAdminInfo" asp-controller="dashboard" class="btn btn-primary">Edit AdminInfo</a>
+</div>
+
+
+<div class="container pt-4">
+    <h1 class="text-center mb-4">Work Experience</h1>
+    <div class="container-flex">
+        <a asp-action="addWorkHistory" asp-controller="dashboard" class="btn btn-primary btn">Add WorkHistory</a>
+    </div>
+   
+    <div class="row justify-content-center">
+        @foreach (var workHistory in Model.WorkHistories)
+        {
+            <div class="col-md-6">
+                <div class="frame">
+                    <p>Company: <strong>@workHistory.CompanyName</strong>, @workHistory.CompanyAddress</p>
+                    <p>Position: @workHistory.Position</p>
+                    <p>Job Description: @workHistory.Description</p>
+                    <p>Top Skills: @workHistory.Skills</p>
+                    <p>Work Duration: @workHistory.StartDate - @workHistory.EndDate</p>
+                    <br/>
+                    <a asp-controller="dashboard" asp-action="editworkhistory" asp-route-id="@workHistory.Id" class="btn btn-primary">Edit</a>
+                    <a id="del-btn" asp-controller="dashboard" asp-action="deleteworkhistory" asp-route-id="@workHistory.Id" class="btn " method="Delete">Delete</a>
+                  
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+

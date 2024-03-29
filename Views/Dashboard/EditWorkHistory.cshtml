@@ -1,0 +1,56 @@
+﻿@using Portfolio.Models.Entity
+@model WorkHistory
+
+@{
+    ViewData["Title"] = "Work History";
+}
+<div class="py-5">
+    <h1> Work History </h1>
+
+    <form asp-action="editWorkHistory" asp-controller="dashboard" method="post">
+        <div class="mb-3">
+            <label asp-for="CompanyName">Company Name</label>
+            <input asp-for="CompanyName" class="form-control" />
+            <span asp-validation-for="CompanyName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Position">Position</label>
+            <input asp-for="Position" class="form-control" />
+            <span asp-validation-for="Position" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description">Description</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CompanyAddress">Company Address</label>
+            <input asp-for="CompanyAddress" class="form-control" />
+            <span asp-validation-for="CompanyAddress" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Skills">Skills</label>
+            <input asp-for="Skills" class="form-control" />
+            <span asp-validation-for="Skills" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="StartDate">StartDate</label>
+            <input asp-for="StartDate" class="form-control" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+
+
+        <div class="mb-3">
+            <label asp-for="EndDate">EndDate</label>
+            <input asp-for="EndDate" class="form-control" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
