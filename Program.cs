@@ -1,6 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Portfolio.Data;
+using Portfolio.Models.Entity;
 using Portfolio.Services;
 using Portfolio.Services.Interfaces;
 
@@ -19,13 +20,19 @@ namespace Portfolio
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
- 
+
+            builder.Services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<PortfolioDbContext>()
+                 .AddDefaultTokenProviders(); ;
+
             builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
             builder.Services.AddScoped<IEmailService, EmailService>();
 
-       
+            builder.Services.AddScoped<IGenericEntityRepositoryService<AdminInfo>, GenericEntityRepositoryService<AdminInfo>>();
+            builder.Services.AddScoped<IGenericEntityRepositoryService<WorkHistory>, GenericEntityRepositoryService<WorkHistory>>();
+            builder.Services.AddScoped<IGenericEntityRepositoryService<Email>, GenericEntityRepositoryService<Email>>();
 
-        var app = builder.Build();
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -40,6 +47,7 @@ namespace Portfolio
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

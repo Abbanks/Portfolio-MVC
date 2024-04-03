@@ -1,53 +1,55 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.SignalR.Protocol;
-using Microsoft.EntityFrameworkCore;
-using Portfolio.Data;
 using Portfolio.Models;
 using Portfolio.Models.Entity;
 using Portfolio.Models.ViewModel;
+using Portfolio.Services.Interfaces;
 using System.Diagnostics;
 
 namespace Portfolio.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly PortfolioDbContext _context;
+        private readonly IGenericEntityRepositoryService<AdminInfo> _adminInfoService;
+        private readonly IGenericEntityRepositoryService<WorkHistory> _workHistoryService;
 
-        public HomeController(PortfolioDbContext context)
+        public HomeController(IGenericEntityRepositoryService<AdminInfo> adminInfoService,
+            IGenericEntityRepositoryService<WorkHistory> workHistoryService)
         {
-            _context = context;
+            _adminInfoService = adminInfoService;
+            _workHistoryService = workHistoryService;
         }
 
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            
+
             AdminInfo adminDetails = new AdminInfo();
 
-            var adminInfo = _context.AdminInfos;
-            var workHistories = _context.WorkHistories;
+            var adminInfo = await _adminInfoService.GetAllAsync();
+            var workHistories = await _workHistoryService.GetAllAsync();
 
-            if (adminInfo != null && workHistories != null && adminInfo.Any() && workHistories.Any()) { 
-             adminDetails = adminInfo.Join(workHistories, a => a.AdminInfoId, w => w.AdminInfoId, (a, w) => new { a, w }).Select(x => new AdminInfo
+            if (adminInfo != null && workHistories != null && adminInfo.Any() && workHistories.Any())
             {
-                Name = x.a.Name,
-                Title = x.a.Title,
-                Email = x.a.Email,
-                PhoneNumber = x.a.PhoneNumber,
-                Address = x.a.Address,
-                GitHubUrl = x.a.GitHubUrl,
-                LinkedInUrl = x.a.LinkedInUrl,
-                WorkHistories = x.a.WorkHistories.Select(workHistory => new WorkHistory
+                adminDetails = adminInfo.Join(workHistories, a => a.AdminInfoId, w => w.AdminInfoId, (a, w) => new { a, w }).Select(x => new AdminInfo
                 {
-                    CompanyName = workHistory.CompanyName,
-                    Position = workHistory.Position,
-                    CompanyAddress = workHistory.CompanyAddress,
-                    StartDate = workHistory.StartDate.Date,
-                }).ToList()
-            }).First();
-        }
-        
+                    Name = x.a.Name,
+                    Title = x.a.Title,
+                    Email = x.a.Email,
+                    PhoneNumber = x.a.PhoneNumber,
+                    Address = x.a.Address,
+                    GitHubUrl = x.a.GitHubUrl,
+                    LinkedInUrl = x.a.LinkedInUrl,
+                    WorkHistories = x.a.WorkHistories.Select(workHistory => new WorkHistory
+                    {
+                        CompanyName = workHistory.CompanyName,
+                        Position = workHistory.Position,
+                        CompanyAddress = workHistory.CompanyAddress,
+                        StartDate = workHistory.StartDate
+                    }).ToList()
+                }).First();
+            }
+
 
             var viewModel = new HomeViewModel
             {
@@ -63,11 +65,11 @@ namespace Portfolio.Controllers
                     CompanyName = workHistory.CompanyName,
                     Position = workHistory.Position,
                     CompanyAddress = workHistory.CompanyAddress,
-                    StartDate = workHistory.StartDate.Date
+                    StartDate = workHistory.StartDate,
                 }).OrderByDescending(w => w.StartDate).ToList()
             };
-             return View(viewModel);
-           
+            return View(viewModel);
+
 
         }
 

@@ -1,5 +1,4 @@
-﻿using Portfolio.Models.Entity;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Portfolio.Models.ViewModel
 {
@@ -12,7 +11,7 @@ namespace Portfolio.Models.ViewModel
         public string Position { get; set; } = "";
 
         [Required(ErrorMessage = "Please enter job description.")]
-        public string Description { get; set; } = ""; 
+        public string Description { get; set; } = "";
 
         [Required(ErrorMessage = "Please enter company address.")]
         public string CompanyAddress { get; set; } = "";

@@ -1,25 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Portfolio.Data;
+using Portfolio.Models.Entity;
 using Portfolio.Models.ViewModel;
+using Portfolio.Services.Interfaces;
 
 namespace Portfolio.Controllers
 {
     public class ProfileController : Controller
     {
-        private readonly PortfolioDbContext _context;
 
-        public ProfileController(PortfolioDbContext context)
+        private readonly IGenericEntityRepositoryService<WorkHistory> _workHistoryService;
+        public ProfileController(IGenericEntityRepositoryService<WorkHistory> workHistoryService)
         {
-            _context = context;
+            _workHistoryService = workHistoryService;
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             List<ViewWorkHistoryViewModel> WorkHistories = new List<ViewWorkHistoryViewModel>();
-   
-            var workHistories = _context.WorkHistories;
+
+            var workHistories = await _workHistoryService.GetAllAsync();
 
             if (workHistories != null)
             {
@@ -30,19 +30,19 @@ namespace Portfolio.Controllers
                     CompanyAddress = workHistory.CompanyAddress,
                     Skills = workHistory.Skills,
                     StartDate = workHistory.StartDate.Date,
-                    EndDate = workHistory.EndDate.Date,
+                    EndDate = workHistory.EndDate,
                     Description = workHistory.Description
                 }).ToList();
-               
+
             }
 
             var viewModel = new ProfileViewModel
             {
                 WorkHistories = WorkHistories.OrderByDescending(w => w.StartDate).ToList()
             };
-           
+
             return View(viewModel);
- 
+
         }
 
 

@@ -1,9 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Portfolio.Models.ViewModel
+﻿namespace Portfolio.Models.ViewModel
 {
     public class ProfileViewModel
     {
-      public IList<ViewWorkHistoryViewModel> WorkHistories { get; set; } 
+        public IList<ViewWorkHistoryViewModel> WorkHistories { get; set; }
     }
 }

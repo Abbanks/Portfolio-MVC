@@ -1,21 +1,36 @@
 ﻿@model ProfileViewModel
 
+<div class="container mt-5">
+ <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+            <h2>Employment History</h2>
  
-    <div class="container pt-4">
-        <h1 class="text-center mb-4">Work Profile</h1>
-        <div class="row justify-content-center">
-            @foreach (var workHistory in Model.WorkHistories)
-            {
-                <div class="col-md-6">
-                    <div class="frame">
-                        <p>Company: <strong>@workHistory.CompanyName</strong>, @workHistory.CompanyAddress</p>
-                        <p>Position: @workHistory.Position</p>
-                        <p>Job Description: @workHistory.Description</p>
-                        <p>Top Skills: @workHistory.Skills</p>
-                        <p>Work Duration: @workHistory.StartDate - @workHistory.EndDate</p>
+            </div>
+        </div>
+        <div class="col-md-6 pt-5">
+            <div class="box box-style" >
+                        @foreach (var workHistory in Model.WorkHistories)
+                        {
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-company text-uppercase">@workHistory.CompanyName, @workHistory.CompanyAddress</p>
+                        <h5 class="card-position bold-text">@workHistory.Position</h5>
+                        <p class="text-muted">@workHistory.StartDate - @workHistory.EndDate</p>
+                        <p>@workHistory.Skills</p>
+                        <p class="bold-text">@workHistory.Description</p>
+                            
                     </div>
                 </div>
-            }
-        </div>  
+                        }
+                     
+            </div>
+            </div>
+                </div>
 </div>
 
+
+ 
+
+
+  

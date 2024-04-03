@@ -2,49 +2,60 @@
 @{
     ViewData["Title"] = "Contact";
 }
- 
-
-<div class="bg-secondary bg-opacity-10 py-2">
-    <div class="container">
-        <h1 class="display-4">Get In Touch</h1>
+<div class="content-container">
+<div class="container-fluid hero d-flex justify-content-center align-items-center content-container" id="hero-section">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Let's Chat</h1>
+        </div>
     </div>
 </div>
 
-<div class="container py-5">
-    <form asp-action="Contact" asp-controller="Contact" method="post">
-        @if (ViewData["SuccessMessage"] != null)
-        {
-            <div class="alert alert-success" role="alert">
-                @ViewData["SuccessMessage"]
-            </div>
-        }
 
-        <div class="mb-3">
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+
+            @if (ViewData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @ViewData["SuccessMessage"]
+                </div>
+            }
+    <form asp-action="contact" asp-controller="contact" method="post">
+        <div class="form-group">
             <label asp-for="SenderName">Name</label>
-            <input asp-for="SenderName" class="form-control" />
+            <input asp-for="SenderName" class="form-control" id="name" placeholder="Enter your name">
             <span asp-validation-for="SenderName" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+         <div class="form-group">
             <label asp-for="Subject">Subject</label>
-            <input asp-for="Subject" class="form-control" />
+                    <input asp-for="Subject" class="form-control" id="subject" placeholder="Enter subject">
             <span asp-validation-for="Subject" class="text-danger"></span>
+    
         </div>
 
-        <div class="mb-3">
+        <div class="form-group">
             <label asp-for="SenderEmail">Email</label>
-            <input asp-for="SenderEmail" class="form-control" />
+            <input asp-for="SenderEmail" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter your email" />
             <span asp-validation-for="SenderEmail" class="text-danger"></span>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
     
 
         <div class="mb-3">
             <label asp-for="Body">Message</label>
-            <textarea asp-for="Body" class="form-control" rows="5"></textarea>
+            <textarea asp-for="Body" class="form-control" rows="5" placeholder="Write your message here..."></textarea>
             <span asp-validation-for="Body" class="text-danger"></span>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+         
+        </div>
+    </div>
+</div>
+    </div>
     </div>
         

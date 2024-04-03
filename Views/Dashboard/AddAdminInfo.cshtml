@@ -3,67 +3,71 @@
 @{
     ViewData["Title"] = "Admin Info";
 }
-<div class="py-5">
+
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="shadow-sm p-3 rounded bg-white">
     <h1>Personal Information</h1>
-   
-    
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
     <form asp-action="addAdminInfo" asp-controller="dashboard" method="post">
-        @if (TempData["SuccessMessage"] != null)
-        {
-            <div class="alert alert-success" role="alert">
-                @TempData["SuccessMessage"]
-            </div>
-        }
- 
- 
-         
-        <div class="mb-3">
+  
+        <div class="form-group">
             <label asp-for="Name">Name</label>
             <input asp-for="Name" class="form-control" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+                <div class="form-group">
             <label asp-for="Title">Title</label>
             <input asp-for="Title" class="form-control"  />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
 
-        <div class="mb-3">
+                <div class="form-group">
             <label asp-for="Email">Email</label>
             <input asp-for="Email" class="form-control"  />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+                <div class="form-group">
             <label asp-for="PhoneNumber">Phone Number:</label>
             <input asp-for="PhoneNumber" class="form-control" />
             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+                <div class="form-group">
             <label asp-for="Address">Address</label>
             <input asp-for="Address" class="form-control" />
             <span asp-validation-for="Address" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+                <div class="form-group">
             <label asp-for="GitHubUrl">GitHubUrl</label>
             <input asp-for="GitHubUrl" class="form-control" />
             <span asp-validation-for="GitHubUrl" class="text-danger"></span>
         </div>
 
-        <div class="mb-3">
+                <div class="form-group">
             <label asp-for="LinkedInUrl">LinkedInUrl</label>
             <input asp-for="LinkedInUrl" class="form-control" />
             <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
         </div>
-
-        <button  type="submit" class="btn btn-primary">Submit</button>
+ 
+        <p class="text-center" style="border-radius:20px"><button type="submit" class="btn btn-primary bg-dark text-white border-0">Submit</button></p>
        
     </form>
  
 </div>
+</div>
+</div>
+ 
 
 

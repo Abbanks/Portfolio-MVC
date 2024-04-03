@@ -12,11 +12,11 @@ namespace Portfolio.Models.Entity
 
         public string CompanyAddress { get; set; } = "";
 
-        public string Skills { get; set; } = ""; 
+        public string Skills { get; set; } = "";
         public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }  
+        public DateTime EndDate { get; set; }
 
         public string AdminInfoId { get; set; } = "";
-        public AdminInfo? AdminInfo { get; set; } 
+        public AdminInfo? AdminInfo { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Data;
- 
+
 using Portfolio.Models.Entity;
 using Portfolio.Models.ViewModel;
 using Portfolio.Services.Interfaces;
@@ -9,12 +8,13 @@ namespace Portfolio.Controllers
 {
     public class ContactController : Controller
     {
-        private readonly PortfolioDbContext _context;
+        private readonly IGenericEntityRepositoryService<Email> _emailRepositoryService;
 
         private readonly IEmailService _emailService;
-        public ContactController(PortfolioDbContext context, IEmailService emailService)
+        public ContactController(IGenericEntityRepositoryService<Email> emailRepositoryService,
+            IEmailService emailService)
         {
-            _context = context;
+            _emailRepositoryService = emailRepositoryService;
             _emailService = emailService;
         }
 
@@ -39,13 +39,9 @@ namespace Portfolio.Controllers
                     Body = model.Body
                 };
 
-                _context.Emails.Add(message);
-                _context.SaveChanges();
-
- 
+                await _emailRepositoryService.AddAsync(message);
 
                 await _emailService.SendEmail(model.SenderName, model.Subject, model.SenderEmail, model.Body);
-                ViewData["SuccessMessage"] = "Your message has been sent successfully!";
 
                 return RedirectToAction("Contact");
 
@@ -54,7 +50,7 @@ namespace Portfolio.Controllers
             return View(model);
         }
 
-       
+
 
     }
 }

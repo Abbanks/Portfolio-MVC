@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "s337h44DKRqF4UKpwIqVxPVvt003w6lEWqtSG9MXlXY=",
+  "Hash": "HCEIdmfSBmLg7gpmYHLIAX+ZvaHkAW3lpKaN1FInA80=",
   "Source": "Portfolio",
   "BasePath": "_content/Portfolio",
   "Mode": "Default",
@@ -93,6 +93,25 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\image\\background.jpg",
+      "SourceId": "Portfolio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\",
+      "BasePath": "_content/Portfolio",
+      "RelativePath": "image/background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\background.jpg"
+    },
+    {
       "Identity": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\image\\img.png",
       "SourceId": "Portfolio",
       "SourceType": "Discovered",
@@ -110,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\image\\img.png"
+    },
+    {
+      "Identity": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\image\\photo.jpg",
+      "SourceId": "Portfolio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\",
+      "BasePath": "_content/Portfolio",
+      "RelativePath": "image/photo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\image\\photo.jpg"
     },
     {
       "Identity": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\js\\site.js",

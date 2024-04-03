@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\image\\background.jpg",
+      "PackagePath": "staticwebassets\\image\\background.jpg"
+    },
+    {
       "Id": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\image\\img.png",
       "PackagePath": "staticwebassets\\image\\img.png"
+    },
+    {
+      "Id": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\image\\photo.jpg",
+      "PackagePath": "staticwebassets\\image\\photo.jpg"
     },
     {
       "Id": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\wwwroot\\js\\site.js",

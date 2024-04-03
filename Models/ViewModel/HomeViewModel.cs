@@ -1,7 +1,4 @@
-﻿using Portfolio.Models.Entity;
-using System.ComponentModel.DataAnnotations;
-
-namespace Portfolio.Models.ViewModel
+﻿namespace Portfolio.Models.ViewModel
 {
     public class HomeViewModel
     {
@@ -14,6 +11,6 @@ namespace Portfolio.Models.ViewModel
         public string GitHubUrl { get; set; } = "";
         public string LinkedInUrl { get; set; } = "";
 
-        public ICollection<AddWorkHistoryViewModel> WorkHistories { get; set; } 
+        public ICollection<AddWorkHistoryViewModel> WorkHistories { get; set; }
     }
 }

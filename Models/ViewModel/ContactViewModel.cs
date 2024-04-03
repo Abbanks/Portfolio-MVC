@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Portfolio.Models.ViewModel
 {
-    public class ContactViewModel 
+    public class ContactViewModel
     {
         [Required(ErrorMessage = "Please enter your name.")]
         public string SenderName { get; set; } = "";

@@ -2,14 +2,18 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
- 
+
+<div>
+    @await Html.PartialAsync("_NavBarPartial")
+</div>
+
 @if (ViewBag.ErrorMessage != null)
 {
     <div class="alert alert-danger" role="alert">
         @ViewBag.ErrorMessage
     </div>
 }
- 
+
 <div class="container pt-4">
     <div class="row">
         <div class="col-md-6">
@@ -38,33 +42,45 @@
 </div>
 
 
-<div class="container pt-4">
-    <h1 class="text-center mb-4">Work Experience</h1>
-    <div class="container-flex">
-        <a asp-action="addWorkHistory" asp-controller="dashboard" class="btn btn-primary btn">Add WorkHistory</a>
-    </div>
-   
-    <div class="row justify-content-center">
-        @foreach (var workHistory in Model.WorkHistories)
-        {
-            <div class="col-md-6">
-                <div class="frame">
-                    <p>Company: <strong>@workHistory.CompanyName</strong>, @workHistory.CompanyAddress</p>
-                    <p>Position: @workHistory.Position</p>
-                    <p>Job Description: @workHistory.Description</p>
-                    <p>Top Skills: @workHistory.Skills</p>
-                    <p>Work Duration: @workHistory.StartDate - @workHistory.EndDate</p>
-                    <br/>
-                    <a asp-controller="dashboard" asp-action="editworkhistory" asp-route-id="@workHistory.Id" class="btn btn-primary">Edit</a>
-                    <a id="del-btn" asp-controller="dashboard" asp-action="deleteworkhistory" asp-route-id="@workHistory.Id" class="btn " method="Delete">Delete</a>
-                  
-                </div>
+ 
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box">
+                <h2>Employment History</h2>
             </div>
-        }
+
+            <a asp-action="addWorkHistory" asp-controller="dashboard" class="btn btn-primary bg-dark text-white border-0">Add WorkHistory</a>
+           
+        </div>
+        <div class="col-md-6 pt-5">
+            <div class="box box-style">
+               
+                  
+                        @foreach (var workHistory in Model.WorkHistories)
+                        {
+                        <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-company text-uppercase">@workHistory.CompanyName, @workHistory.CompanyAddress</p>
+                            <h5 class="card-position bold-text">@workHistory.Position</h5>
+                            <p class="text-muted">@workHistory.StartDate - @workHistory.EndDate</p>
+                            <p>@workHistory.Skills</p>
+                            <p class="bold-text">@workHistory.Description</p>
+                            <br />
+                            <a asp-controller="dashboard" asp-action="editworkhistory" asp-route-id="@workHistory.Id" class="btn btn-primary">Edit</a>
+                            <a id="del-btn" asp-controller="dashboard" asp-action="deleteworkhistory" asp-route-id="@workHistory.Id" class="btn " method="Delete">Delete</a>
+                        </div>
+                        </div>
+                        }
+
+                    
+                
+            </div>
+        </div>
     </div>
-</div>
+</div
 
-
-
+ 
 
 

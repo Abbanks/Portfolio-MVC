@@ -1,28 +1,33 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Portfolio.Data;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Portfolio.Models.Entity;
 using Portfolio.Models.ViewModel;
-using System.Linq;
+using Portfolio.Services.Interfaces;
 
 namespace Portfolio.Controllers
 {
     public class DashboardController : Controller
     {
-       
-        private readonly PortfolioDbContext _context;
-        public DashboardController(PortfolioDbContext context)
+        private readonly IGenericEntityRepositoryService<AdminInfo> _adminInfoService;
+        private readonly IGenericEntityRepositoryService<WorkHistory> _workHistoryService;
+
+        public DashboardController(IGenericEntityRepositoryService<AdminInfo> adminInfoService,
+            IGenericEntityRepositoryService<WorkHistory> workHistoryService)
         {
-            _context = context;
+            _adminInfoService = adminInfoService;
+            _workHistoryService = workHistoryService;
         }
+
+
         [HttpGet]
-        public IActionResult Index()
+        [Authorize]
+        public async Task<IActionResult> Index()
         {
-            
+
             AdminInfo adminDetails = new AdminInfo();
 
-            var adminInfo = _context.AdminInfos;
-            var workHistories = _context.WorkHistories;
+            var adminInfo = await _adminInfoService.GetAllAsync();
+            var workHistories = await _workHistoryService.GetAllAsync();
 
             if (adminInfo == null || workHistories == null)
             {
@@ -49,8 +54,8 @@ namespace Portfolio.Controllers
                         Position = workHistory.Position,
                         CompanyAddress = workHistory.CompanyAddress,
                         Skills = workHistory.Skills,
-                        StartDate = workHistory.StartDate.Date,
-                        EndDate = workHistory.EndDate.Date,
+                        StartDate = workHistory.StartDate,
+                        EndDate = workHistory.EndDate,
                         Description = workHistory.Description
                     }).ToList()
                 }).First();
@@ -73,7 +78,7 @@ namespace Portfolio.Controllers
                     Position = workHistory.Position,
                     CompanyAddress = workHistory.CompanyAddress,
                     Skills = workHistory.Skills,
-                    StartDate = workHistory.StartDate.Date,
+                    StartDate = workHistory.StartDate.Date, 
                     EndDate = workHistory.EndDate.Date,
                     Description = workHistory.Description
                 }).OrderByDescending(w => w.StartDate).ToList()
@@ -82,13 +87,14 @@ namespace Portfolio.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult AddAdminInfo()
         {
             AdminInfoViewModel viewModel = new AdminInfoViewModel();
 
-            var adminInfo = _context.AdminInfos.FirstOrDefault();
+            var adminInfo = _adminInfoService.GetAllAsync().Result.FirstOrDefault();
 
-           
+
             if (adminInfo != null)
             {
                 viewModel = new AdminInfoViewModel
@@ -106,19 +112,18 @@ namespace Portfolio.Controllers
             return View(viewModel);
         }
 
- 
+
         [HttpPost]
-        public IActionResult AddAdminInfo(AdminInfoViewModel model)
+        [Authorize]
+        public async Task<IActionResult> AddAdminInfo(AdminInfoViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var adminInfo = _context.AdminInfos;
 
-                var existingAdminInfo = adminInfo.FirstOrDefault();
-            
+                var existingAdminInfo = _adminInfoService.GetAllAsync().Result.FirstOrDefault();
+
                 if (existingAdminInfo != null)
                 {
-                   // _context.Entry(existingAdminInfo).Reload(); // Reload the entity from the database
 
                     existingAdminInfo.Name = model.Name;
                     existingAdminInfo.Title = model.Title;
@@ -128,8 +133,8 @@ namespace Portfolio.Controllers
                     existingAdminInfo.GitHubUrl = model.GitHubUrl;
                     existingAdminInfo.LinkedInUrl = model.LinkedInUrl;
 
-                     
-                    adminInfo.Update(existingAdminInfo);
+                    await _adminInfoService.UpdateAsync(existingAdminInfo);
+
                 }
                 else
                 {
@@ -141,83 +146,71 @@ namespace Portfolio.Controllers
                         PhoneNumber = model.PhoneNumber,
                         Address = model.Address,
                         GitHubUrl = model.GitHubUrl,
-                        LinkedInUrl = model.LinkedInUrl 
+                        LinkedInUrl = model.LinkedInUrl
 
                     };
-                 
-                    adminInfo.Add(newAdminInfo);
-                }
 
-                _context.SaveChanges();
+                    await _adminInfoService.AddAsync(newAdminInfo);
+                }
 
                 TempData["SuccessMessage"] = "Your info has been saved successfully!";
 
                 return RedirectToAction("Index");
-             
+
             }
             return View(model);
         }
 
-        /*  [HttpGet]
-          public IActionResult ClearSuccessMessage()
-          {
-              TempData.Remove("SuccessMessage");
-              return RedirectToAction("AddAdminInfo");
-          }*/
-
         [HttpGet]
+        [Authorize]
         public IActionResult AddWorkHistory()
         {
             return View();
-        }   
+        }
 
         [HttpPost]
-        public IActionResult AddWorkHistory(AddWorkHistoryViewModel model)
+        [Authorize]
+        public async Task<IActionResult> AddWorkHistory(AddWorkHistoryViewModel model)
         {
-            var admins = _context.AdminInfos;
-            if(admins == null)
-            {
-                ViewBag.ErrorMessage = "Admin Information cannot be found";
-                return View();
-            }   
-
-            var admin = admins.First();
-
             if (ModelState.IsValid)
             {
+                var admins = await _adminInfoService.GetAllAsync();
+                if (admins == null || !admins.Any())
+                {
+                    ViewBag.ErrorMessage = "Admin Information cannot be found";
+                    return View();
+                }
+
+                var admin = admins.First();
+
                 var newWorkHistory = new WorkHistory
                 {
-                    //Id = Guid.NewGuid().ToString(),
                     CompanyName = model.CompanyName,
                     Position = model.Position,
                     CompanyAddress = model.CompanyAddress,
                     Skills = model.Skills,
-                    StartDate = model.StartDate.Date,
-                    EndDate = model.EndDate.Date,
+                    StartDate = model.StartDate,
+                    EndDate = model.EndDate,
                     Description = model.Description,
                     AdminInfoId = admin.AdminInfoId
                 };
 
-           
-                _context.WorkHistories.Add(newWorkHistory);
-
-                _context.SaveChanges();
+                await _workHistoryService.AddAsync(newWorkHistory);
 
                 TempData["SuccessMessage"] = "Your work history has been saved successfully!";
-
                 return RedirectToAction("Index");
             }
 
             return View(model);
         }
 
+
         [HttpGet]
+        [Authorize]
         public IActionResult EditWorkHistory(string id)
         {
-            //AddWorkHistoryViewModel viewModel = new AddWorkHistoryViewModel();
 
-            var workHistories = _context.WorkHistories;
-            var workHistory = workHistories.FirstOrDefault(wh => wh.Id == id);
+            var workHistory = _workHistoryService.GetAllAsync().Result.FirstOrDefault(wh => wh.Id == id);
 
             if (workHistory == null)
             {
@@ -225,28 +218,28 @@ namespace Portfolio.Controllers
                 return View();
             }
 
-             
 
             return View(workHistory);
         }
 
         [HttpPost]
-        public IActionResult EditWorkHistory(string id, AddWorkHistoryViewModel model)
+        [Authorize]
+        public async Task<IActionResult> EditWorkHistory(string id, AddWorkHistoryViewModel model)
         {
-            var workHistory = _context.WorkHistories.FirstOrDefault(wh => wh.Id == id);
+            var workHistory = _workHistoryService.GetAllAsync().Result.FirstOrDefault(wh => wh.Id == id);
 
-            if (workHistory != null) 
+            if (workHistory != null)
             {
                 workHistory.CompanyName = model.CompanyName;
                 workHistory.Position = model.Position;
                 workHistory.CompanyAddress = model.CompanyAddress;
                 workHistory.Skills = model.Skills;
-                workHistory.StartDate = model.StartDate.Date;
-                workHistory.EndDate = model.EndDate.Date;
+                workHistory.StartDate = model.StartDate;
+                workHistory.EndDate = model.EndDate;
                 workHistory.Description = model.Description;
 
-                _context.WorkHistories.Update(workHistory);
-                _context.SaveChanges();
+                await _workHistoryService.UpdateAsync(workHistory);
+
             }
 
             return RedirectToAction("Index");
@@ -254,34 +247,20 @@ namespace Portfolio.Controllers
 
 
         [HttpGet]
-        public IActionResult DeleteWorkHistory(string id)
+        [Authorize]
+        public async Task<IActionResult> DeleteWorkHistory(string id)
         {
- 
-            var workHistory = _context.WorkHistories.FirstOrDefault(wh => wh.Id == id);
+
+            var workHistory = _workHistoryService.GetAllAsync().Result.FirstOrDefault(wh => wh.Id == id);
 
             if (workHistory != null)
             {
-                _context.Remove(workHistory);
-                _context.SaveChanges();
+                await _workHistoryService.DeleteAsync(workHistory);
             }
 
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
-        public IActionResult DeleteAdminInfo()
-        {
-            var adminInfo = _context.AdminInfos;
-            var admin = adminInfo.FirstOrDefault();
-
-            if (admin != null)
-            {
-                adminInfo.Remove(admin);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction("Index");
-        }
 
     }
 }

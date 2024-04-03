@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Portfolio.Models.Entity;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Portfolio.Models.ViewModel
 {
