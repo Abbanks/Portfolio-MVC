@@ -39,7 +39,5 @@ Thumbs.db
 *.config
 
 # Ignoring app settings files
-appsettings.json
-appsettings.Development.json
-/appsettings.json
 /appsettings.Development.json
+/appsettings.json
