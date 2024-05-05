@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\services\\genericentityrepositoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:services\\genericentityrepositoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\services\\interfaces\\igenericentityrepositoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:services\\interfaces\\igenericentityrepositoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\views\\account\\congratulatorypage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:views\\account\\congratulatorypage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\models\\viewmodel\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:models\\viewmodel\\forgotpasswordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\models\\entity\\workhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:models\\entity\\workhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\models\\entity\\admininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:models\\entity\\admininfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|c:\\users\\zbook 14u g6\\visual studio projects\\repos\\portfolio\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D351E2C5-5322-4418-9325-045944DA5833}|Portfolio.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,115 +46,90 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "ViewState": "AQIAABkAAAAAAAAAAAAQwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T14:09:28.723Z",
+              "WhenOpened": "2024-04-29T10:19:52.85Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CongratulatoryPage.cshtml",
-              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Views\\Account\\CongratulatoryPage.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\CongratulatoryPage.cshtml",
-              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Views\\Account\\CongratulatoryPage.cshtml",
-              "RelativeToolTip": "Views\\Account\\CongratulatoryPage.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-03T13:06:51.001Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IGenericEntityRepositoryService.cs",
-              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Services\\Interfaces\\IGenericEntityRepositoryService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IGenericEntityRepositoryService.cs",
-              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Services\\Interfaces\\IGenericEntityRepositoryService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IGenericEntityRepositoryService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T09:26:07.915Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-29T10:19:49.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GenericEntityRepositoryService.cs",
-              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Services\\GenericEntityRepositoryService.cs",
-              "RelativeDocumentMoniker": "Services\\GenericEntityRepositoryService.cs",
-              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Services\\GenericEntityRepositoryService.cs",
-              "RelativeToolTip": "Services\\GenericEntityRepositoryService.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAzwB0AAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T09:20:01.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
               "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "Controllers\\DashboardController.cs",
-              "ViewState": "AQIAAP8AAAAAAAAAAAAIwFkAAAATAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAYwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T08:54:35.615Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ForgotPasswordViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Models\\ViewModel\\ForgotPasswordViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ViewModel\\ForgotPasswordViewModel.cs",
-              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Models\\ViewModel\\ForgotPasswordViewModel.cs",
-              "RelativeToolTip": "Models\\ViewModel\\ForgotPasswordViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T08:51:25.022Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-03T08:48:58.195Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ResetPassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Views\\Account\\ResetPassword.cshtml",
-              "RelativeDocumentMoniker": "Views\\Account\\ResetPassword.cshtml",
-              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Views\\Account\\ResetPassword.cshtml",
-              "RelativeToolTip": "Views\\Account\\ResetPassword.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-03T08:44:51.68Z"
+              "WhenOpened": "2024-04-27T03:07:02.054Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "WorkHistory.cs",
+              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Models\\Entity\\WorkHistory.cs",
+              "RelativeDocumentMoniker": "Models\\Entity\\WorkHistory.cs",
+              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Models\\Entity\\WorkHistory.cs",
+              "RelativeToolTip": "Models\\Entity\\WorkHistory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T03:06:55.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminInfo.cs",
+              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Models\\Entity\\AdminInfo.cs",
+              "RelativeDocumentMoniker": "Models\\Entity\\AdminInfo.cs",
+              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Models\\Entity\\AdminInfo.cs",
+              "RelativeToolTip": "Models\\Entity\\AdminInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T03:06:50.098Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-27T03:06:28.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\ZBOOK 14U G6\\Visual Studio Projects\\repos\\Portfolio\\Controllers\\AccountController.cs",
               "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAAUAAAA",
+              "ViewState": "AQIAAB0AAAAAAAAAAAA3wCgAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T08:40:29.9Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-27T03:05:56.258Z"
             }
           ]
         },
