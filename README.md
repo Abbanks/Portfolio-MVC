@@ -1,7 +1,7 @@
 ## Portfolio-MVC
 
 ## Project Overview
-Porfolio is a website designed to provide insights into the individual's background and experiences as a software developer. It serves as a showcase for implementing the MVC architecture pattern using ASP.NET Core, along with various technologies such as dependency injection, middleware, routing, configuration, HTML, and CSS. The project also incorporates working with databases using technologies like Entity Framework Core and LINQ for data access, as well as software engineering principles like SOLID principles and design patterns.
+Portfolio is a website designed to provide insights into the individual's background and experiences as a software developer. It serves as a showcase for implementing the MVC architecture pattern using ASP.NET Core, along with various technologies such as dependency injection, middleware, routing, configuration, HTML, and CSS. The project also incorporates working with databases using technologies like Entity Framework Core and LINQ for data access, as well as software engineering principles like SOLID principles and design patterns.
 
 ## Project Layout
 **Guest's Page**: Consists of three main pages:
